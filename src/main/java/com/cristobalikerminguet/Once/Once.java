@@ -68,7 +68,7 @@ public class Once {
                             porrasCPU = sumaDosPorras(porrasCPU);
                         } else {
                             System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
-                            porrasCPU++;
+                            porrasCPU = sumaUnaPorra(porrasCPU);
                         }
                         inicializarCero(puntosCPU,puntosPlayer);
                     } else { // Empate
