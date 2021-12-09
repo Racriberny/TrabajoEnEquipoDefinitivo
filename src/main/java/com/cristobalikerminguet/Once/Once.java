@@ -17,7 +17,7 @@ public class Once {
     }
 
     public static void juegoPrincipal() {
-
+        
     }
 
     public static int menuPrincipal(){
@@ -48,5 +48,13 @@ public class Once {
         }
 
         return ganador;
+    }
+
+    public static int sumaDosPorras(){
+        return 2;
+    }
+
+    public static int sumaUnaPorra(){
+        return 1;
     }
 }
