@@ -58,7 +58,8 @@ public class Once {
                     if (puntosCPU > MAX_PUNT) {
                         System.out.println("CPU se ha pasado. Porra para Player!!");
                         porrasPlayer = sumaUnaPorra(porrasPlayer);
-                        puntosPlayer = inicializarPuntosPlayerACero(puntosPlayer);
+                        puntosPlayer = inicializarPuntos(puntosPlayer);
+                        puntosCPU = inicializarPuntos(puntosCPU);
                     } else if (puntosCPU > puntosPlayer) { // Gana CPU
                         if (puntosCPU == MAX_PUNT) {
                             System.out.println("\n$$$$$$$$$$$$$$$$");
@@ -70,10 +71,12 @@ public class Once {
                             System.out.println("CPU ha mejorado tu puntuación. Porra para CPU!!");
                             porrasCPU = sumaUnaPorra(porrasCPU);
                         }
-                        puntosPlayer = inicializarPuntosPlayerACero(puntosPlayer);
+                        puntosPlayer = inicializarPuntos(puntosPlayer);
+                        puntosCPU = inicializarPuntos(puntosCPU);
                     } else { // Empate
                         System.out.println("Empate!! Porra para los dos");
-                        puntosPlayer = inicializarPuntosPlayerACero(puntosPlayer);
+                        puntosPlayer = inicializarPuntos(puntosPlayer);
+                        puntosCPU = inicializarPuntos(puntosCPU);
                         porrasCPU = sumaUnaPorra(porrasCPU);
                         porrasPlayer = sumaUnaPorra(porrasPlayer);
                     }
@@ -85,7 +88,8 @@ public class Once {
             } else if (puntosPlayer == MAX_PUNT) {
                 //Al obtener 11 el jugador suma automáticamente 2 porras
                 porrasPlayer = sumaDosPorras(porrasPlayer);
-                puntosPlayer = inicializarPuntosPlayerACero(puntosPlayer);
+                puntosPlayer = inicializarPuntos(puntosPlayer);
+                puntosCPU = inicializarPuntos(puntosCPU);
                 System.out.println("\n$$$$$$$$$$$$$$$$");
                 System.out.println("$$$$ ¡ONCE! $$$$");
                 System.out.println("$$$$$$$$$$$$$$$$");
@@ -99,7 +103,8 @@ public class Once {
                 System.out.println("Ohh!! Te has pasado");
                 System.out.println("Porra para la CPU");
                 porrasCPU = sumaUnaPorra(porrasCPU);
-                puntosPlayer = inicializarPuntosPlayerACero(puntosPlayer);
+                puntosPlayer = inicializarPuntos(puntosPlayer);
+                puntosCPU = inicializarPuntos(puntosCPU);
                 System.out.println("\n**********************");
                 System.out.println("* " + porrasPlayer + " PLAYER  -  CPU " + porrasCPU + " *");
                 System.out.println("**********************");
@@ -127,10 +132,8 @@ public class Once {
         return opcion;
     }
 
-    public static int inicializarPuntosPlayerACero(int puntosPlayer) {
-        puntosPlayer = 0;
-
-        return puntosPlayer;
+    public static int inicializarPuntos(int puntos){
+       return 0;
     }
 
     public static boolean comprobarPorras(int porrasPlayer, int porrasCPU) {
@@ -153,6 +156,8 @@ public class Once {
     }
 
     public static int sumaUnaPorra(int porras){
-        return porras++;
+        porras++;
+
+        return porras;
     }
 }
