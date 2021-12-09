@@ -31,8 +31,22 @@ public class Once {
         opcion = Lib.leerInt();
         return opcion;
     }
+
     public static void inicializarCero(int puntosCpu,int puntosPlayer){
         puntosCpu = 0;
         puntosPlayer = 0;
+    }
+
+    public static boolean comprobarPorras(int porrasPlayer, int porrasCPU) {
+        boolean ganador = true;
+
+        //Si el ganador es la CPU, devuelve FALSE, si es el jugador, devuelve TRUE
+        if (porrasPlayer >= 5) {
+            ganador = true;
+        } else if(porrasCPU >= 5) {
+            ganador = false;
+        }
+
+        return ganador;
     }
 }
