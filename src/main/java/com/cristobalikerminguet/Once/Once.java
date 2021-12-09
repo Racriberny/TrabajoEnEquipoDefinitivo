@@ -10,6 +10,7 @@ public class Once {
             switch (opcion){
                 case 1:
                     juegoPrincipal();
+                    break;
             }
         }while (opcion !=0);
 
@@ -29,5 +30,9 @@ public class Once {
         System.out.print("\nElige una opción: ");
         opcion = Lib.leerInt();
         return opcion;
+    }
+    public static void inicializarCero(int puntosCpu,int puntosPlayer){
+        puntosCpu = 0;
+        puntosPlayer = 0;
     }
 }
