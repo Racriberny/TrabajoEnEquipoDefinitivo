@@ -20,6 +20,7 @@ public class Once {
         final int DELAY = 500;
         final int VALOR_MIN = 1;
         final int VALOR_MAX = 6;
+        final int MAX_PUNT = 11;
         boolean plantado = false;
         int porrasCPU = 0;
         int porrasPlayer = 0;
@@ -37,7 +38,7 @@ public class Once {
             System.out.println("*****");
             puntosPlayer += tiradaPlayer;
             System.out.println("\nTu puntuación actual es " + puntosPlayer);
-            if (puntosPlayer < 11) {
+            if (puntosPlayer < MAX_PUNT) {
                 System.out.print("¿Deseas plantarte con " + puntosPlayer + " puntos? (s/n): ");
                 plantarse = Lib.leerLinea().charAt(0);
                 plantado = plantarse == 's' || plantarse == 'S';
@@ -54,12 +55,12 @@ public class Once {
                         puntosCPU += tiradaCPU;
                         System.out.println("La puntuación actual de la CPU es " + puntosCPU);
                     }
-                    if (puntosCPU > 11) {
+                    if (puntosCPU > MAX_PUNT) {
                         System.out.println("CPU se ha pasado. Porra para Player!!");
                         porrasPlayer = sumaUnaPorra(porrasPlayer);
                         inicializarCero(puntosCPU,puntosPlayer);
                     } else if (puntosCPU > puntosPlayer) { // Gana CPU
-                        if (puntosCPU == 11) {
+                        if (puntosCPU == MAX_PUNT) {
                             System.out.println("\n$$$$$$$$$$$$$$$$");
                             System.out.println("$$$$ ¡ONCE! $$$$");
                             System.out.println("$$$$$$$$$$$$$$$$");
@@ -81,7 +82,7 @@ public class Once {
                     System.out.println("**********************");
                     Lib.intro();
                 }
-            } else if (puntosPlayer == 11) {
+            } else if (puntosPlayer == MAX_PUNT) {
                 //Al obtener 11 el jugador suma automáticamente 2 porras
                 porrasPlayer = sumaDosPorras(porrasPlayer);
                 inicializarCero(puntosCPU,puntosPlayer);
