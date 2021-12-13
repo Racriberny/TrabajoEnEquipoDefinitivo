@@ -25,6 +25,11 @@ public class Lib {
         return r.nextInt(MAX - MIN + 1) + MIN;
     }
 
+    public static double numeroAleatorioDouble(int MIN, int MAX){
+        Random r = new Random();
+        return MIN + (MAX - MIN) * r.nextDouble();
+    }
+
     public static void espera(int x){
         try {
             Thread.sleep(x);
@@ -35,5 +40,29 @@ public class Lib {
     public static void intro(){
         System.out.print("\nPulsa intro para continuar...");
         Lib.leerLinea();
+    }
+    public static int[] arrayInt(int[]array){
+        for (int i = 0; i < array.length ; i++) {
+            System.out.println("Introduce un numero");
+            array[i] = Lib.leerInt();
+        }return array;
+    }
+    public static double[] arrayDouble(double[]array){
+        for (int i = 0; i < array.length ; i++) {
+            System.out.println("Introduce un numero");
+            array[i] = Lib.leerDouble();
+        }return array;
+    }
+    public static String[] arrayString(String[]array){
+        for (int i = 0; i < array.length ; i++) {
+            System.out.println("Introduce una palabra");
+            array[i] = Lib.leerLinea();
+        }return array;
+    }
+    public static char[] arrayChar(char[]array){
+        for (int i = 0; i < array.length ; i++) {
+            System.out.println("Introduce una letra");
+            array[i] = Lib.leerChar();
+        }return array;
     }
 }
